@@ -1,0 +1,117 @@
+/* tutorial: https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/ */
+
+/* the show menu portion of the menu */
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #19c589;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/* hide checkbox (the ticky part) */
+input[type=checkbox] {
+	display: none;
+}
+
+/* show menu when invisible checkbox is checked */
+input[type=checkbox]:checked ~ #menu {
+	display: block;
+}
+
+/* Strip the ul of padding and list styling */
+ul {
+	list-style-type: none;
+	margin:  0;
+	padding: 0;
+	position: absolute;
+}
+
+/* create a horizontal list with spacing */
+li {
+	display: inline-block;
+	float: left;
+	margin-right: 1px;
+}
+
+li a {
+	display:  block;
+	min-width: 140px;
+	height:  50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:  #fff;
+	background:  #223843;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+
+/* when hovering do something to the list */
+li:hover a {
+	background: #8DA9C4;
+}
+
+/* dropdown links */
+li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+	transition-duration: 0.5s;
+
+}
+
+/* hover state for dropdown links */
+li:hover ul a:hover {
+	background: #19c589;
+	color: #fff;
+}
+
+/* hide dropdown links at first */
+li ul {
+	display: none;
+}
+
+/* make dropdown links vertical */
+li ul li {
+	display: block;
+	float: none;
+}
+
+/* prevent text wrapping */
+li ul li a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+/* display dropdown on hover */
+/* + means (after), so the .hidden and .hidden:hover
+actions after a:hover  */
+ul li a:hover + .hidden, .hidden:hover {
+	display: block;
+}
+
+/* responsive styles for mobile */
+@media screen and (max-width: 760px) {
+	/* display 'show menu' link */
+	.show-menu {
+		display: block;
+	}
+	/* make dropdown links appear inline */
+	ul {
+		position:  static;
+		/*display: none;*/
+	}
+	/* create vertical spacing */
+	li {
+		margin-bottom: 1px;
+	}
+	/* make all menu links full width */
+	ul li, li a {
+		width:  100%;
+	}
+}

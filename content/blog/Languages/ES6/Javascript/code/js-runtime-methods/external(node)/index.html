@@ -1,0 +1,27 @@
+<!-- from this youtube tutorial: https://www.youtube.com/watch?v=9Hz3P1VgLz4&feature=youtu.be -->
+
+<html>
+    <head>
+        <title>nn test</title>
+        <style>
+            div {
+                line-height: 5em;
+                text-align: center;
+                background: #ff0300;
+                font-size: 3em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- this input object will be injected with a listener at runtime
+        and serve as the input into the nn to run and produce outputs -->
+        <input type="color" value="#ff0300"/>
+
+        <!-- this div will be selected with an id (#example) at runtime 
+        and the outputs from the nn to change the text's color (through css) -->
+        <div id="example">Example Text</div>
+        
+        <script type="text/javascript" src="client.js"></script>
+    </body>
+</html>

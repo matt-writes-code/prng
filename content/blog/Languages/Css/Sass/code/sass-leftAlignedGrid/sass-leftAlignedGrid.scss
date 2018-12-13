@@ -1,0 +1,59 @@
+/* left aligned grid by fixed height */
+
+$rowsAmount: 3;
+$containerHeight: 100vh;
+$img-margin: 0.2vh;
+
+$theme01: #5D737E, #FFF07C, #F0F7EE, #87BBA2, #FF928B, #FFAC81, #E9E3E6;
+$opacity-normal: .7;
+$opacity-strong: .3;
+
+.container-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	min-width: 100vw;
+	color: nth($theme01, 1);
+	background: nth($theme01, 7);
+
+}
+
+.container-left-aligned {
+	height: $containerHeight;
+	width: 100vw;
+	background-color: nth($theme01, 3);
+	overflow: scroll;
+}
+
+
+
+.col-img {
+	height: ($containerHeight / $rowsAmount) - ($img-margin * 2);
+	width: auto;
+	//max-width: 100%;
+	//background-image: url('');
+	//background-repeat: no-repeat;
+	//background-size: contain;
+	float: left;
+	padding: $img-margin;
+	
+
+
+	
+	.img-autosize {
+	height: inherit;
+	width: inherit;
+	display: block;
+
+	&:hover {
+		content: transparentize(nth($theme01, random(length($theme01))), $opacity-normal);
+		z-index: 1;
+	}
+	&:visited {
+		background-image: transparentize(nth($theme01, 3), $opacity-strong);
+		z-index: 2;
+	}
+}
+}
+

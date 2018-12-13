@@ -1,0 +1,21 @@
+$containerWidth: 100%;
+$margin: 1%;
+$column-count: 5;
+
+.container {
+	width: $containerWidth;
+}
+
+.column {
+	background: #ACECA1;
+	height: 200px;
+	float: left; 
+	/* float left is basically the original css for bootstrap's col-sm-6 grid arrangemenr */
+	width: ($containerWidth / $column-count) - ($margin * 2);
+	margin: 0 $margin;
+	display: block;
+
+	/* width of box is total width divided by number of columns minus
+	margins on both sides */
+
+}

@@ -1,0 +1,62 @@
+/* 1. declaration of a variable */
+$primaryColor: #eeffcc;
+$anotherColor: #aabbcc;
+$aThirdColor: #FEFBFB;
+$fourthColor: #12ABAB;
+
+/* 3. another helpful flah is !default,
+so that there is a default value in case
+one is not provided. it is overwritten if
+provided */
+$firstValue: 82.5%;
+$firstValue: 24px !default;
+
+/*1. this is now viewed like a 'function', with scoping inside */
+body {
+
+	/* 2. scoping is possible, like python
+	global variables too */
+	$primaryColor: #ccc;
+	$anotherColor: #bbb !global;
+
+	background: $primaryColor;
+	color: $fourthColor;
+	font-size: $firstValue;
+}
+
+p {
+
+	color: $anotherColor;
+	background: $aThirdColor;
+
+
+}
+
+/* Sass does math!!! yay 
+some gotchas
+- / is used in font properties 14px/16px, 
+if you want to use the division operator on non-vaiable
+values, you need to wrap them in parantheses
+*/
+
+/* css with slash, only for font property */
+.the-slash {
+	/* source: https://stackoverflow.com/questions/701732/size-of-font-in-css-with-slash */
+	/* this means font 12 on font 16 spacing*/
+	font: 12px/16px serif;
+	/* this means 12 divided by 16 */
+	padding: (12px/16px);
+	/* you also can't mix value units.
+	this now becomes 100% margin top and bottom, -20px both sides */
+	margin: 100% -20px;
+}
+
+$containerWidth: 100%;
+
+.container {
+	width: $containerWidth;
+}
+
+.col-4 {
+	width: $containerWidth / 4;
+}
